@@ -14,6 +14,7 @@ pipeline {
         }
         stage('Deploy in Staging Environment'){
             steps{
+                copyArtifacts(projectName: 'Deploy_tomcat_pipeline');
                 build job: 'Deploy_App_Staging_Env'
 
             }
